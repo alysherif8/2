@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font imports */
+@font-face {
+  font-family: 'Brodien Bold';
+  src: url('./fonts/brodien-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brodien Medium';
+  src: url('./fonts/brodien-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gully CD Light';
+  src: url('./fonts/Gully-CDLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-mint-cream text-dark-gray font-['Gully_CD_Light'] m-0;
+  }
+
+  h1, h2, h3 {
+    @apply font-['Brodien_Bold'];
+  }
+
+  h4, h5, h6 {
+    @apply font-['Brodien_Medium'];
+  }
+
+  p {
+    @apply font-gully;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-colors duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-risd-blue text-white hover:bg-maya-blue;
+  }
+  
+  .btn-secondary {
+    @apply bg-maya-blue text-white hover:bg-vista-blue;
+  }
+  
+  .input {
+    @apply w-full p-2 border border-azure rounded-md focus:outline-none focus:ring-2 focus:ring-maya-blue;
+  }
+}
+
+/* Base styles */
+:root {
+  --color-risd-blue: #4452ff;
+  --color-maya-blue: #75c4ff;
+  --color-vista-blue: #99a1ff;
+  --color-azure: #e1f4f9;
+  --color-mint-cream: #f7ffff;
+}
+
+/* Ensure proper box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Code styling */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
